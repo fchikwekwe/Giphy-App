@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
   //     res.render('home', {gifs: parsed.data})
   //     });
   //   });
-// Line 32 should say {res.data} not {response.data} like in tutorial
+// Line 32 should say {gifs: res.data} not {gifs: response.data} like in tutorial
     giphy.search(req.query.term, function (err, response) {
         res.render('home', {gifs: res.data})
       });
