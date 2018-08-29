@@ -1,12 +1,17 @@
 {
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Mukta', sans-serif;
   color: #333447;
   line-height: 1.5;
 }
 
+body {
+    background-color: #a9c8f9;
+}
+
 h1 {
   text-align: center;
-  color: #4573bc;
+  color: #384760;
+  font-family: 'Mukta', sans-serif;
 }
 
 input {
@@ -29,16 +34,16 @@ button {
   height: 31px;
   width: 110px;
   text-align: center;
-  color: #fff;
+  color: #562751;
   font-size: 1rem;
   font-weight: 200;
-  background: transparent;
-  border: 1px solid #fff;
+  background: #d7efdc;
+  /* border: 1px solid #562751; */
   border-radius: 4px;
   margin: 20px 0;
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
-  border: 1px solid #FE7880;
-  color: #FE7880;
+  border: 2px solid #562751;
+  color: #562751;
 }
