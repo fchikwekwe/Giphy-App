@@ -9,10 +9,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
+//below is the controller
   //   console.log(req.query.term)
   // var queryString = req.query.term;
   // var term = encodeURIComponent(queryString);
-  // var url = 'http://api.giphy.com/v1/gifs/search?q=' + term + '&api_key=dc6zaTOxFJmzC'
+  // var url = 'http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC'
   // http.get(url, function(response) {
   //   response.setEncoding('utf8');
   //
@@ -24,19 +25,19 @@ app.get('/', function (req, res) {
   //
   //   response.on('end', function() {
   //     var parsed = JSON.parse(body);
+ //render calls the view
   //     res.render('home', {gifs: parsed.data})
   //     });
   //   });
-    if (req.query.term != undefined &&  req.query.term != "") {
-    giphy.search(req.query.term, function (err, response) {
-        res.render('home', {gifs: response.data})
-      });
-  }
-    else {
-        giphy.trending(function (err, response) {
-        res.render('home', {gifs: response.data})
+  if (req.query.term) {
+      giphy.search(req.query.term, function (err, response) {
+          res.render('home', {gifs: response.data})
         });
-    }
+  else {
+      giphy.trending(req.query.term, function (err, response) {
+          res.render('home', {gifs: response.data})
+        });
+  }
 });
 
 app.listen(3000, function () {
