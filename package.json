@@ -12,5 +12,8 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "giphy-api": "^1.2.7"
+  },
+  "devDependencies": {
+    "locus": "^2.0.1"
   }
 }
